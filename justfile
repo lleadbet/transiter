@@ -79,8 +79,8 @@ _require-docker:
 
 _run_e2e: _require-docker
 	#!/usr/bin/env sh
-	docker-compose -f tests/endtoend/compose.yml down
-	docker-compose -f tests/endtoend/compose.yml up --build --detach sourceserver transiter db
-	docker-compose -f tests/endtoend/compose.yml up --build --exit-code-from testrunner testrunner  || RESULT=$?
-	docker-compose -f tests/endtoend/compose.yml down
+	docker compose -f tests/endtoend/compose.yml down
+	docker compose -f tests/endtoend/compose.yml up --build --detach sourceserver transiter db
+	docker compose -f tests/endtoend/compose.yml up --build --exit-code-from testrunner testrunner  || RESULT=$?
+	docker compose -f tests/endtoend/compose.yml down
 	exit ${RESULT}
