@@ -75,7 +75,6 @@ test-all: test test-e2e
 _require-docker:
 	@echo "Checking that Docker and Docker compose are installed. These tools are required for this recipe."
 	which docker
-	which docker-compose
 
 _run_e2e: _require-docker
 	#!/usr/bin/env sh
