@@ -67,7 +67,7 @@ FROM caddy:2 AS caddy
 
 # (D) Put it all together.
 # We use this buildpack image because it already has SSL certificates installed
-FROM buildpack-deps:buster-curl
+FROM buildpack-deps:bookworm-curl
 COPY --from=caddy /usr/bin/caddy /usr/bin
 COPY --from=docs-builder /transiter/docs/gen /usr/share/doc/transiter
 COPY --from=builder /transiter/transiter /usr/bin
